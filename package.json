@@ -1,0 +1,28 @@
+{
+  "name": "jucyter",
+  "version": "0.0.1",
+  "description": "Jupyter Like clone for C/C++",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukul-mehta/Jucyter.git"
+  },
+  "author": "akshat, mukul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukul-mehta/Jucyter/issues"
+  },
+  "homepage": "https://github.com/mukul-mehta/Jucyter#readme",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "readline": "^1.3.0",
+    "socket.io": "^2.2.0"
+  }
+}
