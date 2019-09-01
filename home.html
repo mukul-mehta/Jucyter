@@ -1,0 +1,51 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+</script>
+
+<textarea cols="100", rows="65" style="float: left" id="inData"></textarea>
+
+<textarea cols="100", readonly rows="65" style="float: right" id="output"></textarea>
+
+
+<script src="/scripts/jquery.js"></script>
+
+<script>
+
+
+    $("#inData").on("change", () => {
+
+        console.log("here");
+        socket.emit("change in input", $("#inData").val());
+
+    });
+
+
+    socket.on("output update", outcome => {
+
+        if(outcome.error == "")
+            $("#output").val(outcome.output);
+        else
+            $("#output").val("ERROR: \n" + outcome.error);
+
+        console.log(outcome);
+
+    });
+
+    socket.on("compilation error", outcome => {
+
+        $("#output").val("COMPILATION ERROR: \n" + outcome.error);
+        console.log(outcome);
+
+    })
+
+    socket.on("input insufficient", outcome => {
+
+        $("#output").val("INPUT INSUFFICIENT \n");
+        console.log(outcome);
+
+    })
+
+
+
+</script>
